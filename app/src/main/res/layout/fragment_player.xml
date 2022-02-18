@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.part4_chapter1.CustomMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerMotionLayout"
+    app:layoutDescription="@xml/fragment_player_scene">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainerLayout"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:background="#aaaaaa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:resize_mode="fill"
+        app:layout_constraintBottom_toBottomOf="@id/mainContainerLayout"
+        app:layout_constraintStart_toStartOf="@id/mainContainerLayout"
+        app:layout_constraintTop_toTopOf="@id/mainContainerLayout" />
+
+    <ImageView
+        android:id="@+id/bottomPlayerControlView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="@id/mainContainerLayout"
+        app:layout_constraintEnd_toEndOf="@id/mainContainerLayout"
+        app:layout_constraintTop_toTopOf="@id/mainContainerLayout" />
+
+    <TextView
+        android:id="@+id/bottomTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/bottomPlayerControlView"
+        app:layout_constraintEnd_toStartOf="@id/bottomPlayerControlView"
+        app:layout_constraintStart_toEndOf="@id/playerView"
+        app:layout_constraintTop_toTopOf="@id/bottomPlayerControlView"
+        tools:text="제목입니다." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frgmentRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:nestedScrollingEnabled="false"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainContainerLayout" />
+
+</com.example.part4_chapter1.CustomMotionLayout>
